@@ -14,8 +14,4 @@ class BindingComponent : DataBindingComponent {
     override fun getInverseSpinnerBindings(): InverseSpinnerBindings {
         return InverseSpinnerBindings()
     }
-
-    override fun getCompanion(): InverseSpinnerBindings.Companion {
-        return InverseSpinnerBindings.Companion
-    }
 }

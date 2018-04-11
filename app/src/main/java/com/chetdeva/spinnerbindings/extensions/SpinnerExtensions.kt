@@ -65,7 +65,7 @@ object SpinnerExtensions {
      * set spinner value
      */
     fun Spinner.setSpinnerValue(value: Any?) {
-        if (adapter != null) {
+        if (adapter != null ) {
             val position = (adapter as ArrayAdapter<Any>).getPosition(value)
             setSelection(position, false)
             tag = position

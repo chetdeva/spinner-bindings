@@ -1,4 +1,4 @@
-package com.chetdeva.spinnerbindings.cart
+package com.chetdeva.spinnerbindings.invcart
 
 import com.chetdeva.spinnerbindings.dto.CartItem
 
@@ -6,10 +6,11 @@ import com.chetdeva.spinnerbindings.dto.CartItem
  * Copyright (c) 2017 Fueled. All rights reserved.
  * @author chetansachdeva on 09/04/18
  */
-interface CartContract {
+interface InvCartContract {
 
     interface View {
-        fun showUpdatedCart(cartItem: CartItem)
+        fun updateItem(cartItem: CartItem)
+        fun updateItemQuantity(newQuantity: Int)
         fun showMaxQuantityError()
     }
 

@@ -13,18 +13,13 @@ const val MIN_CART_ITEM_QUANTITY = 1
 class CartPresenterImpl(val view: CartContract.View) : CartContract.Presenter {
 
     override fun onItemQuantityChange(cartItem: CartItem, newQuantity: Int) {
-        updateCart(cartItem, newQuantity)
-    }
-
-    private fun updateCart(cartItem: CartItem, newQuantity: Int) {
-        val updatedCartItem = cartItem.copy(quantity = newQuantity)
-        view.showUpdatedCart(updatedCartItem)
+        view.showUpdatedCart(cartItem.copy(quantity = newQuantity))
     }
 
     override fun onAddToCartClick(cartItem: CartItem) {
         val newQuantity = cartItem.quantity + 1
         if (newQuantity <= MAX_CART_ITEM_QUANTITY) {
-            updateCart(cartItem, newQuantity)
+            onItemQuantityChange(cartItem, newQuantity)
         } else {
             view.showMaxQuantityError()
         }

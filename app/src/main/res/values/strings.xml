@@ -2,13 +2,13 @@
     <string name="app_name">SpinnerBindings</string>
     <string name="item_in_cart_format">%d Item in Cart</string>
     <string name="items_in_cart_format">%d Items in Cart</string>
-    <string name="item_price_format">$%.2f</string>
+    <string name="item_price_format">$%.1f</string>
     <string name="one_in_cart">1 Item in Cart</string>
     <string name="android_figurine">Android Figurine</string>
     <string name="android_figurine_description">Cute little Android collectible</string>
     <string name="android_figurine_price">$16</string>
     <string name="item_max_quantity_error">You cannot add more than %d items</string>
-    <string name="cart">Cart with DataBinding</string>
-    <string name="inverse_cart">Cart with Inverse DataBinding</string>
+    <string name="cart_title">Cart with DataBinding</string>
+    <string name="inv_cart_title">Cart with Inverse DataBinding</string>
     <string name="delete_item">delete item</string>
 </resources>

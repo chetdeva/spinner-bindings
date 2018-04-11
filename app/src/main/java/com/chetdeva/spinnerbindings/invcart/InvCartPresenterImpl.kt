@@ -1,6 +1,5 @@
-package com.chetdeva.spinnerbindings.inversecart
+package com.chetdeva.spinnerbindings.invcart
 
-import com.chetdeva.spinnerbindings.cart.CartContract
 import com.chetdeva.spinnerbindings.dto.CartItem
 
 /**
@@ -11,15 +10,10 @@ import com.chetdeva.spinnerbindings.dto.CartItem
 const val MAX_CART_ITEM_QUANTITY = 9
 const val MIN_CART_ITEM_QUANTITY = 1
 
-class InvCartPresenterImpl(val view: CartContract.View) : CartContract.Presenter {
+class InvCartPresenterImpl(val view: InvCartContract.View) : InvCartContract.Presenter {
 
     override fun onItemQuantityChange(cartItem: CartItem, newQuantity: Int) {
-        updateCart(cartItem, newQuantity)
-    }
-
-    private fun updateCart(cartItem: CartItem, newQuantity: Int) {
-        val updatedCartItem = cartItem.copy(quantity = newQuantity)
-        view.showUpdatedCart(updatedCartItem)
+        view.updateItem(cartItem.copy(quantity = newQuantity))
     }
 
     override fun onAddToCartClick(cartItem: CartItem) {

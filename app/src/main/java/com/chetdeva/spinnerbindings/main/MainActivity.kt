@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import com.chetdeva.spinnerbindings.R
 import com.chetdeva.spinnerbindings.cart.CartActivity
 import com.chetdeva.spinnerbindings.databinding.ActivityMainBinding
-import com.chetdeva.spinnerbindings.inversecart.InvCartActivity
+import com.chetdeva.spinnerbindings.invcart.InvCartActivity
 
 class MainActivity : AppCompatActivity(), MainHandler {
 

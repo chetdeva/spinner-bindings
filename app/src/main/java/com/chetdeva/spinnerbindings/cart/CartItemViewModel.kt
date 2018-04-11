@@ -3,7 +3,6 @@ package com.chetdeva.spinnerbindings.cart
 import android.databinding.ObservableField
 import com.chetdeva.spinnerbindings.dto.CartItem
 import com.chetdeva.spinnerbindings.extensions.populateList
-import java.text.NumberFormat
 
 /**
  * Copyright (c) 2017 Fueled. All rights reserved.

@@ -15,19 +15,16 @@ class SpinnerBindings {
 
     @BindingAdapter("entries")
     fun Spinner.setEntries(entries: List<Any>?) {
-        /* set spinner entries */
         setSpinnerEntries(entries)
     }
 
     @BindingAdapter("onItemSelected")
     fun Spinner.setListener(itemSelectedListener: ItemSelectedListener?) {
-        /* set spinner ItemSelectedListener */
         setSpinnerItemSelectedListener(itemSelectedListener)
     }
 
     @BindingAdapter("newValue")
     fun Spinner.setNewValue(newValue: Any?) {
-        /* set spinner newValue */
         if (adapter != null) setSpinnerValue(newValue)
     }
 }

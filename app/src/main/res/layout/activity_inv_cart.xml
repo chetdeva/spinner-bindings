@@ -11,14 +11,14 @@
 
         <variable
             name="presenter"
-            type="com.chetdeva.spinnerbindings.cart.CartContract.Presenter" />
+            type="com.chetdeva.spinnerbindings.invcart.InvCartContract.Presenter" />
     </data>
 
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/darker_gray"
-        tools:context="com.chetdeva.spinnerbindings.inversecart.InvCartActivity">
+        tools:context="com.chetdeva.spinnerbindings.invcart.InvCartActivity">
 
         <TextView
             android:id="@+id/item_quantity_text"
@@ -35,7 +35,7 @@
 
         <include
             android:id="@+id/cart_item"
-            layout="@layout/item_inverse_cart"
+            layout="@layout/item_inv_cart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"

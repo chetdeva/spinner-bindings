@@ -1,4 +1,4 @@
-package com.chetdeva.spinnerbindings.inversecart
+package com.chetdeva.spinnerbindings.invcart
 
 import android.databinding.DataBindingUtil
 import android.databinding.Observable
@@ -6,14 +6,12 @@ import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import com.chetdeva.spinnerbindings.R
-import com.chetdeva.spinnerbindings.cart.CartContract
 import com.chetdeva.spinnerbindings.cart.CartItemViewModel
-import com.chetdeva.spinnerbindings.cart.MAX_CART_ITEM_QUANTITY
-import com.chetdeva.spinnerbindings.cart.MIN_CART_ITEM_QUANTITY
 import com.chetdeva.spinnerbindings.databinding.ActivityInvCartBinding
 import com.chetdeva.spinnerbindings.dto.CartItem
+import com.chetdeva.spinnerbindings.extensions.get
 
-class InvCartActivity : AppCompatActivity(), CartContract.View {
+class InvCartActivity : AppCompatActivity(), InvCartContract.View {
 
     private lateinit var binding: ActivityInvCartBinding
 
@@ -21,16 +19,17 @@ class InvCartActivity : AppCompatActivity(), CartContract.View {
         val name = getString(R.string.android_figurine)
         val description = getString(R.string.android_figurine_description)
         val price = 16.0
-        CartItem(name, description, price, MAX_CART_ITEM_QUANTITY, MIN_CART_ITEM_QUANTITY)
+        CartItem(name, description, price, MIN_CART_ITEM_QUANTITY, MAX_CART_ITEM_QUANTITY)
     }
 
-    private val presenter: CartContract.Presenter by lazy {
+    private val presenter: InvCartContract.Presenter by lazy {
         InvCartPresenterImpl(this)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_inv_cart)
+        supportActionBar?.setTitle(R.string.inv_cart_title)
 
         binding.presenter = presenter
         binding.model = buildModel()
@@ -40,14 +39,14 @@ class InvCartActivity : AppCompatActivity(), CartContract.View {
         return CartItemViewModel(defaultCartItem)
                 .apply {
                     itemQuantity.addOnPropertyChangedCallback(object : Observable.OnPropertyChangedCallback() {
-                        override fun onPropertyChanged(p0: Observable?, p1: Int) {
-                            presenter.onItemQuantityChange(cartItem, itemQuantity.get())
+                        override fun onPropertyChanged(p0: Observable, p1: Int) {
+                            presenter.onItemQuantityChange(cartItem, p0.get())
                         }
                     })
                 }
     }
 
-    override fun showUpdatedCart(cartItem: CartItem) {
+    override fun updateItem(cartItem: CartItem) {
         binding.model?.update(cartItem)
     }
 

@@ -16,22 +16,19 @@ class InverseSpinnerBindings {
 
     @BindingAdapter("selectedValue")
     fun Spinner.setSelectedValue(selectedValue: Any?) {
-        /* set spinner value */
         setSpinnerValue(selectedValue)
     }
 
     @BindingAdapter("selectedValueAttrChanged")
     fun Spinner.setSelectedValueAttrChanged(inverseBindingListener: InverseBindingListener?) {
-        /* set inverse binding adapter */
         setSpinnerInverseBindingListener(inverseBindingListener)
     }
 
-    companion object {
+    companion object InverseSpinnerBindings {
 
         @JvmStatic
         @InverseBindingAdapter(attribute = "selectedValue", event = "selectedValueAttrChanged")
         fun Spinner.getSelectedValue(): Any? {
-            /* set spinner value */
             return getSpinnerValue()
         }
     }

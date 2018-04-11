@@ -61,7 +61,7 @@
 
         <TextView
             android:id="@+id/item_price_text"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:text="@{@string/item_price_format(model.itemPrice), default=@string/android_figurine_price}"

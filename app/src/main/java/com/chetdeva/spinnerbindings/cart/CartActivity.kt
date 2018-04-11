@@ -16,7 +16,7 @@ class CartActivity : AppCompatActivity(), CartContract.View {
         val name = getString(R.string.android_figurine)
         val description = getString(R.string.android_figurine_description)
         val price = 16.0
-        CartItem(name, description, price, MAX_CART_ITEM_QUANTITY, MIN_CART_ITEM_QUANTITY)
+        CartItem(name, description, price, MIN_CART_ITEM_QUANTITY, MAX_CART_ITEM_QUANTITY)
     }
 
     private val presenter: CartContract.Presenter by lazy {
@@ -26,6 +26,7 @@ class CartActivity : AppCompatActivity(), CartContract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_cart)
+        supportActionBar?.setTitle(R.string.cart_title)
 
         binding.presenter = presenter
         binding.model = buildModel(defaultCartItem)
@@ -37,10 +38,6 @@ class CartActivity : AppCompatActivity(), CartContract.View {
 
     override fun showUpdatedCart(cartItem: CartItem) {
         binding.model?.update(cartItem)
-    }
-
-    override fun updateItemQuantity(newQuantity: Int) {
-
     }
 
     override fun showMaxQuantityError() {
