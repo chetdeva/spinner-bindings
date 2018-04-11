@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.chetdeva.spinnerbindings.cart.CartItemViewModel" />
+
+        <variable
+            name="presenter"
+            type="com.chetdeva.spinnerbindings.cart.CartContract.Presenter" />
+    </data>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/darker_gray"
+        tools:context="com.chetdeva.spinnerbindings.inversecart.InvCartActivity">
+
+        <TextView
+            android:id="@+id/item_quantity_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="4dp"
+            android:drawableStart="@drawable/ic_shopping_cart_white_24dp"
+            android:drawableTint="@android:color/white"
+            android:padding="8dp"
+            android:text="@{@plurals/items_in_cart_format(model.itemQuantity, model.itemQuantity), default=@string/one_in_cart}"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <include
+            android:id="@+id/cart_item"
+            layout="@layout/item_inverse_cart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            app:model="@{model}"
+            app:presenter="@{presenter}" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/add_to_cart_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:onClick="@{() -> presenter.onAddToCartClick(model.cartItem)}"
+            android:src="@drawable/ic_add_shopping_cart_white_24dp"
+            android:tint="@android:color/white" />
+
+    </android.support.design.widget.CoordinatorLayout>
+</layout>

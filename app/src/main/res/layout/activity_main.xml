@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.chetdeva.spinnerbindings.main.MainHandler" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        tools:context="com.chetdeva.spinnerbindings.main.MainActivity">
+
+        <Button
+            android:id="@+id/cart_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> handler.onCartClicked()}"
+            android:text="@string/cart"
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/inverse_cart_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> handler.onInverseCartClicked()}"
+            android:text="@string/inverse_cart"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+</layout>
