@@ -10,21 +10,21 @@ SpinnerBindings expounds on how we can bind a Spinner with DataBinding or Invers
 
 ```kotlin
     /**
-     * sets spinner entries
+     * set spinner entries
      */
     fun Spinner.setSpinnerEntries(entries: List<Any>?) {
         // ...
     }
 
     /**
-     * sets spinner onItemSelectedListener listener
+     * set spinner onItemSelectedListener listener
      */
     fun Spinner.setSpinnerItemSelectedListener(listener: ItemSelectedListener?) {
         // ...
     }
 
     /**
-     * sets spinner onItemSelectedListener listener
+     * set spinner onItemSelectedListener listener
      */
     fun Spinner.setSpinnerInverseBindingListener(listener: InverseBindingListener?) {
         // ...

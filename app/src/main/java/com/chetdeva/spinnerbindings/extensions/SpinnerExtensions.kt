@@ -13,7 +13,7 @@ import android.widget.Spinner
 object SpinnerExtensions {
 
     /**
-     * sets spinner entries
+     * set spinner entries
      */
     fun Spinner.setSpinnerEntries(entries: List<Any>?) {
         if (entries != null) {
@@ -24,7 +24,7 @@ object SpinnerExtensions {
     }
 
     /**
-     * sets spinner onItemSelectedListener listener
+     * set spinner onItemSelectedListener listener
      */
     fun Spinner.setSpinnerItemSelectedListener(listener: ItemSelectedListener?) {
         if (listener == null) {
@@ -43,7 +43,7 @@ object SpinnerExtensions {
     }
 
     /**
-     * sets spinner onItemSelectedListener listener
+     * set spinner onItemSelectedListener listener
      */
     fun Spinner.setSpinnerInverseBindingListener(listener: InverseBindingListener?) {
         if (listener == null) {
