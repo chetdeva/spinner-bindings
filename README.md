@@ -9,40 +9,40 @@ SpinnerBindings expounds on how we can bind a Spinner with DataBinding or Invers
 [SpinnerExtensions](./app/src/main/java/com/chetdeva/spinnerbindings/extensions/SpinnerExtensions.kt) entails extension helper functions for Spinner that can be called from `BindingAdapter`.
 
 ```kotlin
-/**
- * sets spinner entries
- */
-fun Spinner.setSpinnerEntries(entries: List<Any>?) {
-    /* ... */
-}
+    /**
+     * sets spinner entries
+     */
+    fun Spinner.setSpinnerEntries(entries: List<Any>?) {
+        // ...
+    }
 
-/**
- * sets spinner onItemSelectedListener listener
- */
-fun Spinner.setSpinnerItemSelectedListener(listener: ItemSelectedListener?) {
-    /* ... */
-}
+    /**
+     * sets spinner onItemSelectedListener listener
+     */
+    fun Spinner.setSpinnerItemSelectedListener(listener: ItemSelectedListener?) {
+        // ...
+    }
 
-/**
- * sets spinner onItemSelectedListener listener
- */
-fun Spinner.setSpinnerInverseBindingListener(listener: InverseBindingListener?) {
-    /* ... */
-}
+    /**
+     * sets spinner onItemSelectedListener listener
+     */
+    fun Spinner.setSpinnerInverseBindingListener(listener: InverseBindingListener?) {
+        // ...
+    }
 
-/**
- * set spinner value
- */
-fun Spinner.setSpinnerValue(value: Any?) {
-    /* ... */
-}
+    /**
+     * set spinner value
+     */
+    fun Spinner.setSpinnerValue(value: Any?) {
+        // ...
+    }
 
-/**
- * get spinner value
- */
-fun Spinner.getSpinnerValue(): Any? {
-    /* ... */
-}
+    /**
+     * get spinner value
+     */
+    fun Spinner.getSpinnerValue(): Any? {
+        // ...
+    }
 ```
 
 ## How to Bind
@@ -60,20 +60,20 @@ In your `Gradle`
 In your `BindingAdapter`
 
 ```kotlin
-@BindingAdapter("entries")
-fun Spinner.setEntries(entries: List<Any>?) {
-    setSpinnerEntries(entries)
-}
+    @BindingAdapter("entries")
+    fun Spinner.setEntries(entries: List<Any>?) {
+        setSpinnerEntries(entries)
+    }
 
-@BindingAdapter("onItemSelected")
-fun Spinner.setListener(itemSelectedListener: ItemSelectedListener?) {
-    setSpinnerItemSelectedListener(itemSelectedListener)
-}
+    @BindingAdapter("onItemSelected")
+    fun Spinner.setListener(itemSelectedListener: ItemSelectedListener?) {
+        setSpinnerItemSelectedListener(itemSelectedListener)
+    }
 
-@BindingAdapter("newValue")
-fun Spinner.setNewValue(newValue: Any?) {
-    setSpinnerValue(newValue)
-}
+    @BindingAdapter("newValue")
+    fun Spinner.setNewValue(newValue: Any?) {
+        setSpinnerValue(newValue)
+    }
 ```
 
 In your `XML` file
@@ -100,24 +100,24 @@ In your `XML` file
 In your `BindingAdapter`
 
 ```kotlin
-@BindingAdapter("selectedValue")
-fun Spinner.setSelectedValue(selectedValue: Any?) {
-    setSpinnerValue(selectedValue)
-}
-
-@BindingAdapter("selectedValueAttrChanged")
-fun Spinner.setSelectedValueAttrChanged(inverseBindingListener: InverseBindingListener?) {
-    setSpinnerInverseBindingListener(inverseBindingListener)
-}
-
-companion object InverseSpinnerBindings {
-
-    @JvmStatic
-    @InverseBindingAdapter(attribute = "selectedValue", event = "selectedValueAttrChanged")
-    fun Spinner.getSelectedValue(): Any? {
-        return getSpinnerValue()
+    @BindingAdapter("selectedValue")
+    fun Spinner.setSelectedValue(selectedValue: Any?) {
+        setSpinnerValue(selectedValue)
     }
-}
+
+    @BindingAdapter("selectedValueAttrChanged")
+    fun Spinner.setSelectedValueAttrChanged(inverseBindingListener: InverseBindingListener?) {
+        setSpinnerInverseBindingListener(inverseBindingListener)
+    }
+
+    companion object InverseSpinnerBindings {
+
+        @JvmStatic
+        @InverseBindingAdapter(attribute = "selectedValue", event = "selectedValueAttrChanged")
+        fun Spinner.getSelectedValue(): Any? {
+            return getSpinnerValue()
+        }
+    }
 ```
 
 In your `XML` file
@@ -143,15 +143,15 @@ In your `XML` file
 Add Android DataBinding Compiler your `app` gradle file.
 
 ```groovy
-dependencies {
-    kapt 'com.android.databinding:compiler:3.0.1'
-}
+    dependencies {
+        kapt 'com.android.databinding:compiler:3.0.1'
+    }
 ```
 
-Make sure to apply `kotlin-kapt` plugin on top of `app` gradle file.
+Make sure to apply `kotlin-kapt` plugin on top of your `app` gradle file.
 
 ```groovy
-apply plugin: 'kotlin-kapt'
+    apply plugin: 'kotlin-kapt'
 ```
 
 ## Also try
