@@ -2,10 +2,10 @@ package com.chetdeva.spinnerbindings.binding
 
 import android.databinding.BindingAdapter
 import android.widget.Spinner
+import com.chetdeva.spinnerbindings.extensions.SpinnerExtensions.ItemSelectedListener
 import com.chetdeva.spinnerbindings.extensions.SpinnerExtensions.setSpinnerEntries
 import com.chetdeva.spinnerbindings.extensions.SpinnerExtensions.setSpinnerItemSelectedListener
 import com.chetdeva.spinnerbindings.extensions.SpinnerExtensions.setSpinnerValue
-import com.chetdeva.spinnerbindings.extensions.ItemSelectedListener
 
 /**
  * Copyright (c) 2017 Fueled. All rights reserved.

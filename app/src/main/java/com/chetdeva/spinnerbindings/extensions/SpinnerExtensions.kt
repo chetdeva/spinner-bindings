@@ -78,4 +78,8 @@ object SpinnerExtensions {
     fun Spinner.getSpinnerValue(): Any? {
         return selectedItem
     }
+
+    interface ItemSelectedListener {
+        fun onItemSelected(item: Any)
+    }
 }
