@@ -20,7 +20,7 @@ class InverseSpinnerBindings {
     }
 
     @BindingAdapter("selectedValueAttrChanged")
-    fun Spinner.setSelectedValueAttrChanged(inverseBindingListener: InverseBindingListener?) {
+    fun Spinner.setInverseBindingListener(inverseBindingListener: InverseBindingListener?) {
         setSpinnerInverseBindingListener(inverseBindingListener)
     }
 

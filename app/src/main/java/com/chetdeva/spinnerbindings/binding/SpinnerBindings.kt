@@ -19,7 +19,7 @@ class SpinnerBindings {
     }
 
     @BindingAdapter("onItemSelected")
-    fun Spinner.setListener(itemSelectedListener: ItemSelectedListener?) {
+    fun Spinner.setOnItemSelectedListener(itemSelectedListener: ItemSelectedListener?) {
         setSpinnerItemSelectedListener(itemSelectedListener)
     }
 

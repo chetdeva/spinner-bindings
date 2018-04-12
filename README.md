@@ -66,7 +66,7 @@ In your `BindingAdapter`
     }
 
     @BindingAdapter("onItemSelected")
-    fun Spinner.setListener(itemSelectedListener: ItemSelectedListener?) {
+    fun Spinner.setItemSelectedListener(itemSelectedListener: ItemSelectedListener?) {
         setSpinnerItemSelectedListener(itemSelectedListener)
     }
 
@@ -106,7 +106,7 @@ In your `BindingAdapter`
     }
 
     @BindingAdapter("selectedValueAttrChanged")
-    fun Spinner.setSelectedValueAttrChanged(inverseBindingListener: InverseBindingListener?) {
+    fun Spinner.setInverseBindingListener(inverseBindingListener: InverseBindingListener?) {
         setSpinnerInverseBindingListener(inverseBindingListener)
     }
 
