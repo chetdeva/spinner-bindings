@@ -28,7 +28,7 @@
             android:drawableStart="@drawable/ic_shopping_cart_white_24dp"
             android:drawableTint="@android:color/white"
             android:padding="8dp"
-            android:text="@{@plurals/items_in_cart_format(model.itemQuantity, model.itemQuantity), default=@string/one_in_cart}"
+            android:text="@{@plurals/items_in_cart_format(model.quantity, model.quantity), default=@string/one_in_cart}"
             android:textColor="@android:color/white"
             android:textSize="16sp"
             android:textStyle="bold" />

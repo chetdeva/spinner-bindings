@@ -10,20 +10,20 @@ import com.chetdeva.spinnerbindings.extensions.populateList
  * @author chetansachdeva on 09/04/18
  */
 class CartItemViewModel(var cartItem: CartItem,
-                        val itemName: ObservableField<String> = ObservableField(cartItem.name),
-                        val itemDescription: ObservableField<String> = ObservableField(cartItem.description),
-                        val itemImage: ObservableField<Drawable> = ObservableField(cartItem.image),
-                        val itemPrice: ObservableField<Double> = ObservableField(cartItem.quantifiedPrice),
-                        val itemQuantity: ObservableField<Int> = ObservableField(cartItem.quantity),
-                        val itemQuantityEntries: ObservableField<List<Int>> = ObservableField(cartItem.maxQuantity.populateList())) {
+                        val name: ObservableField<String> = ObservableField(cartItem.name),
+                        val description: ObservableField<String> = ObservableField(cartItem.description),
+                        val image: ObservableField<Drawable> = ObservableField(cartItem.image),
+                        val price: ObservableField<Double> = ObservableField(cartItem.quantifiedPrice),
+                        val quantity: ObservableField<Int> = ObservableField(cartItem.quantity),
+                        val quantityEntries: ObservableField<List<Int>> = ObservableField(cartItem.maxQuantity.populateList())) {
 
     fun update(cartItem: CartItem) {
         this.cartItem = cartItem
-        itemName.set(cartItem.name)
-        itemDescription.set(cartItem.description)
-        itemImage.set(cartItem.image)
-        itemPrice.set(cartItem.quantifiedPrice)
-        itemQuantity.set(cartItem.quantity)
-        itemQuantityEntries.set(cartItem.maxQuantity.populateList())
+        name.set(cartItem.name)
+        description.set(cartItem.description)
+        image.set(cartItem.image)
+        price.set(cartItem.quantifiedPrice)
+        quantity.set(cartItem.quantity)
+        quantityEntries.set(cartItem.maxQuantity.populateList())
     }
 }

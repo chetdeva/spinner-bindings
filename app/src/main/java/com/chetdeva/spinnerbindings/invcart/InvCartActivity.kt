@@ -40,7 +40,7 @@ class InvCartActivity : AppCompatActivity(), InvCartContract.View {
     private fun buildModel(): CartItemViewModel {
         return CartItemViewModel(defaultCartItem)
                 .apply {
-                    itemQuantity.addOnPropertyChangedCallback(object : Observable.OnPropertyChangedCallback() {
+                    quantity.addOnPropertyChangedCallback(object : Observable.OnPropertyChangedCallback() {
                         override fun onPropertyChanged(p0: Observable, p1: Int) {
                             presenter.onItemQuantityChange(cartItem, p0.get())
                         }
@@ -53,7 +53,7 @@ class InvCartActivity : AppCompatActivity(), InvCartContract.View {
     }
 
     override fun updateItemQuantity(newQuantity: Int) {
-        binding.model?.itemQuantity?.set(newQuantity)
+        binding.model?.quantity?.set(newQuantity)
     }
 
     override fun showMaxQuantityError() {
