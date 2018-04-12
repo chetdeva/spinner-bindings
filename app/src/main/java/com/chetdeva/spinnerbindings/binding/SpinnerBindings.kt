@@ -25,6 +25,6 @@ class SpinnerBindings {
 
     @BindingAdapter("newValue")
     fun Spinner.setNewValue(newValue: Any?) {
-        if (adapter != null) setSpinnerValue(newValue)
+        setSpinnerValue(newValue)
     }
 }

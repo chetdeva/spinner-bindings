@@ -30,7 +30,7 @@
             android:layout_height="80dp"
             android:contentDescription="@string/android_figurine"
             android:scaleType="centerCrop"
-            android:src="@drawable/android_figurine"
+            android:src="@{model.itemImage, default=@drawable/android_figurine}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -85,14 +85,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="12dp"
             android:background="@drawable/ic_spinner_bg"
             android:gravity="center_vertical"
             android:paddingStart="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             android:textSize="16sp"
             app:entries="@{model.itemQuantityEntries}"
             app:layout_constraintStart_toEndOf="@id/item_image"
-            app:layout_constraintTop_toBottomOf="@id/item_description_text"
             app:selectedValue="@={model.itemQuantity}" />
 
     </android.support.constraint.ConstraintLayout>

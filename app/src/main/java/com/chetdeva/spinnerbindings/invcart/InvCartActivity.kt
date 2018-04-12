@@ -4,6 +4,7 @@ import android.databinding.DataBindingUtil
 import android.databinding.Observable
 import android.os.Bundle
 import android.support.design.widget.Snackbar
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import com.chetdeva.spinnerbindings.R
 import com.chetdeva.spinnerbindings.cart.CartItemViewModel
@@ -18,8 +19,9 @@ class InvCartActivity : AppCompatActivity(), InvCartContract.View {
     private val defaultCartItem: CartItem by lazy {
         val name = getString(R.string.android_figurine)
         val description = getString(R.string.android_figurine_description)
+        val image = ContextCompat.getDrawable(this, R.drawable.android_figurine)
         val price = 16.0
-        CartItem(name, description, price, MIN_CART_ITEM_QUANTITY, MAX_CART_ITEM_QUANTITY)
+        CartItem(name, description, image, price, MIN_CART_ITEM_QUANTITY, MAX_CART_ITEM_QUANTITY)
     }
 
     private val presenter: InvCartContract.Presenter by lazy {
